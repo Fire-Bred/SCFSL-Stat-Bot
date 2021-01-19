@@ -2,7 +2,6 @@ module.exports = {
     name: "passingStats",
     description: "This command gets a player's stats for you",
     execute(message, args) {
-        console.log({args});
       const embed = {
         title:
           args._regclass +
