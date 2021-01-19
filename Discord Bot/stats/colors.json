@@ -1,0 +1,64 @@
+{
+  "wallabies": {
+	"Color": 5538994,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787013633195507792/large_logo.png"
+  },
+  "hammerheads": {
+	"Color": 204,
+	"Logo": "https://media.discordapp.net/attachments/787009358616592434/787011110552862790/large_logo.png"
+  },
+  "aztecs": {
+    	"Color": 1742086,
+	"Logo": "https://media.discordapp.net/attachments/787009358616592434/787011959911350352/large_logo.png"
+  },
+  "frost giants": {
+    	"Color": 7984360,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787012190888656926/large_logo.png"
+  },
+  "twisters": {
+    	"Color": 4008733,
+	"Logo": "https://media.discordapp.net/attachments/677617870016086046/800908514704490496/large_logo.png"
+  },
+  "dragons": {
+    	"Color": 10819094,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787013045045821520/large_logo.png"
+  },
+  "aliens": {
+    	"Color": 8132203,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787013339443101736/large_logo.png"
+
+  },
+  "flamingos": {
+    	"Color": 15608689,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787013542015926272/large_logo.png"
+  },
+  "rush": {
+    	"Color": 14221312,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787013970224611348/large_logo.png"
+  },
+  "vipers": {
+    	"Color": 16747520,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787014120474017893/large_logo.png"
+  },
+  "victorious lions": {
+    	"Color": 4064283,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787015124275167292/large_logo.png"
+  },
+  "knights": {
+    	"Color": 9868950,
+	"Logo": "https://cdn.discordapp.com/attachments/787009358616592434/787015328462929970/large_logo.png"
+  },
+  "kings": {
+    	"Color": 11128035,
+	"Logo": "https://cdn.discordapp.com/attachments/787018796203376660/787018983944880159/large_logo.png"
+  },
+  "railraiders": {
+    	"Color": 2087,
+	"Logo": "https://cdn.discordapp.com/attachments/787018796203376660/787018964668121109/large_logo.png"
+
+  },
+  "titans": {
+	"Color": 16777215,
+	"Logo": "https://cdn.discordapp.com/attachments/787018796203376660/787019069089251339/large_logo.png"
+}
+}

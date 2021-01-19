@@ -1,0 +1,25 @@
+{
+  "name": "scfsl-stats-bot",
+  "version": "1.0.0",
+  "description": "A bot accessible to all SCFSL players to easily access stats",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Stats",
+    "Bot",
+    "SCFSL"
+  ],
+  "author": "Toasty",
+  "license": "ISC",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "csvjson-csv2json": "^5.0.6",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "google-spreadsheet": "^3.1.15",
+    "googleapis": "^39.2.0",
+    "repeating": "^3.0.0"
+  }
+}

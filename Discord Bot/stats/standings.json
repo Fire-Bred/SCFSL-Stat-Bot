@@ -1,0 +1,145 @@
+{
+  "wallabies": {
+    "Place": 1,
+    "Team": "Wallabies",
+    "Wins": 8,
+    "Loses": 1,
+    "PF": 294,
+    "PA": 69,
+    "PD": 225,
+    "Division": "Division 1",
+    "Text": "Top of Division 1"
+  },
+  "hammerheads": {
+    "Place": 2,
+    "Team": "Hammerheads",
+    "Wins": 8,
+    "Loses": 1,
+    "PF": 223,
+    "PA": 87,
+    "PD": 136,
+    "Division": "Division 1",
+    "Text": "2nd in Division 1"
+  },
+  "aztecs": {
+    "Place": 3,
+    "Team": "Aztecs",
+    "Wins": 5,
+    "Loses": 4,
+    "PF": 203,
+    "PA": 114,
+    "PD": 89,
+    "Division": "Division 1",
+    "Text": "3rd in Division 1"
+  },
+  "frost giants": {
+    "Place": 4,
+    "Team": "Frost Giants",
+    "Wins": 3,
+    "Loses": 6,
+    "PF": 127,
+    "PA": 167,
+    "PD": -40,
+    "Division": "Division 1",
+    "Text": "4th in Division 1"
+  },
+  "twisters": {
+    "Place": 5,
+    "Team": "Twisters",
+    "Wins": 2,
+    "Loses": 7,
+    "PF": 104,
+    "PA": 298,
+    "PD": -194,
+    "Division": "Division 1",
+    "Text": "5th in Division 1"
+  },
+  "dragons": {
+    "Place": 6,
+    "Team": "Dragons",
+    "Wins": 2,
+    "Loses": 7,
+    "PF": 163,
+    "PA": 297,
+    "PD": -134,
+    "Division": "Division 1",
+    "Text": "Bottom of Division 1"
+  },
+  "": {
+    "Place": "",
+    "Team": "",
+    "Wins": "",
+    "Loses": "",
+    "PF": "",
+    "PA": "",
+    "PD": "",
+    "Division": "",
+    "Text": ""
+  },
+  "aliens": {
+    "Place": 1,
+    "Team": "Aliens",
+    "Wins": 7,
+    "Loses": 2,
+    "PF": 204,
+    "PA": 88,
+    "PD": 116,
+    "Division": "Division 2",
+    "Text": "Top of Division 2"
+  },
+  "flamingos": {
+    "Place": 2,
+    "Team": "Flamingos",
+    "Wins": 7,
+    "Loses": 2,
+    "PF": 277,
+    "PA": 116,
+    "PD": 161,
+    "Division": "Division 2",
+    "Text": "2nd in Division 2"
+  },
+  "rush": {
+    "Place": 3,
+    "Team": "Rush",
+    "Wins": 6,
+    "Loses": 3,
+    "PF": 141,
+    "PA": 143,
+    "PD": -2,
+    "Division": "Division 2",
+    "Text": "3rd in Division 2"
+  },
+  "vipers": {
+    "Place": 4,
+    "Team": "Vipers",
+    "Wins": 5,
+    "Loses": 4,
+    "PF": 203,
+    "PA": 182,
+    "PD": 21,
+    "Division": "Division 2",
+    "Text": "4th in Division 2"
+  },
+  "victorious lions": {
+    "Place": 5,
+    "Team": "Victorious Lions",
+    "Wins": 1,
+    "Loses": 8,
+    "PF": 66,
+    "PA": 187,
+    "PD": -121,
+    "Division": "Division 2",
+    "Text": "5th in Division 2"
+  },
+  "knights": {
+    "Place": 6,
+    "Team": "Knights",
+    "Wins": 0,
+    "Loses": 9,
+    "PF": 109,
+    "PA": 366,
+    "PD": -257,
+    "Division": "Division 2",
+    "Text": "Bottom of Division 2"
+  }
+}
