@@ -496,31 +496,32 @@ client.on('message', message =>{
         if(client.attributes[editedmessage] == undefined){
             message.channel.send(editedmessage + ' is not in the statabase. If you believe he should be DM Toasty.')
         } else {
-            let _name = client.attributes[editedmessage].Name;
-            let _regclass = client.attributes[editedmessage].RegressionClass;
-            let _team = client.attributes[editedmessage].Team;
-            let _pos = client.attributes[editedmessage].Position;
-            let _tpe = client.attributes[editedmessage].TPESpent;
-            let _dcp = client.attributes[editedmessage].DepthChartPosition;
-            let _number = client.attributes[editedmessage].NUMBER;
-            let _spd = client.attributes[editedmessage].SPEED;
-            let _tb = client.attributes[editedmessage].TLKBRK;
-            let _fum = client.attributes[editedmessage].FUMBLE;
-            let _catch = client.attributes[editedmessage].CATCH;
-            let _blk = client.attributes[editedmessage].BLKING;
-            let _tacc = client.attributes[editedmessage].THRACC;
-            let _kpwr = client.attributes[editedmessage].KCKPWR;
-            let _kacc = client.attributes[editedmessage].KCKACC;
-            let _bb = client.attributes[editedmessage].BLKBRK;
-            let _tkl = client.attributes[editedmessage].TACKLE;
-            let _tpwr = client.attributes[editedmessage].THRPWR;
-            let _aware = client.attributes[editedmessage].AWARE;
-            let _agl = client.attributes[editedmessage].AGIL;
-            let _cover = client.attributes[editedmessage].COVER;
-            let _hpwr = client.attributes[editedmessage].HITPWR;
-            let _end = client.attributes[editedmessage].ENDUR;
-            let _dis = client.attributes[editedmessage].DISCIPLINE;
-            const _team1 = _team.toLowerCase()
+          let _name = client.attributes[editedmessage].Name;
+          let _regclass = client.attributes[editedmessage].RegressionClass;
+          let _team = client.attributes[editedmessage].Team;
+          let _pos = client.attributes[editedmessage].Position;
+          let _tpe = client.attributes[editedmessage].TPESpent;
+          let _dcp = client.attributes[editedmessage].DepthChartPosition;
+          let _number = client.attributes[editedmessage].NUMBER;
+          let _spd = client.attributes[editedmessage].SPEED;
+          let _tb = client.attributes[editedmessage].TLKBRK;
+          let _fum = client.attributes[editedmessage].FUMBLE;
+          let _catch = client.attributes[editedmessage].CATCH;
+          let _blk = client.attributes[editedmessage].BLKING;
+          let _tacc = client.attributes[editedmessage].THRACC;
+          let _kpwr = client.attributes[editedmessage].KCKPWR;
+          let _kacc = client.attributes[editedmessage].KCKACC;
+          let _bb = client.attributes[editedmessage].BLKBRK;
+          let _tkl = client.attributes[editedmessage].TACKLE;
+          let _tpwr = client.attributes[editedmessage].THRPWR;
+          let _aware = client.attributes[editedmessage].AWARE;
+          let _agl = client.attributes[editedmessage].AGIL;
+          let _cover = client.attributes[editedmessage].COVER;
+          let _hpwr = client.attributes[editedmessage].HITPWR;
+          let _end = client.attributes[editedmessage].ENDUR;
+          let _dis = client.attributes[editedmessage].DISCIPLINE;
+
+          const _team1 = _team.toLowerCase()
             if(client.teamcolors[_team1] == undefined){
               var _color = 13938487
               var _logo = "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
@@ -528,115 +529,38 @@ client.on('message', message =>{
               var _color = client.teamcolors[_team1].Color;
               var _logo = client.teamcolors[_team1].Logo;  
           }
-            const embed = {
-              "title": _regclass +" "+ _pos + " - " + "#" + _number + " - " + _name + " - " + _team,
-              "description": "TPE Spent: " + _tpe +'\n'+"Depth Chart Position: " +_dcp,
-              "color": _color,
-              "footer": {
-                "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-              },
-              "thumbnail": {
-                "url": _logo
-              },
-              "author": {
-                "name": "Attributes",
-                "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-              },
-              "fields": [
-                {
-                  "name": "Speed:"  ,
-                  "value": _spd,
-                  "inline": true
-                },
-                {
-                  "name": "Tackle Break:" ,
-                  "value": _tb,
-                  "inline": true
-                },
-                {
-                  "name": "Catch:" ,
-                  "value": _catch,
-                  "inline": true
-                },
-                {
-                  "name": "Blocking:",
-                  "value": _blk,
-                  "inline": true
-                },
-                {
-                  "name": "Fumble:",
-                  "value": _fum,
-                  "inline": true
-                },
-                {
-                  "name": "Agilty:",
-                  "value": _agl,
-                  "inline": true
-                },
-                {
-                  "name": "Throw Accuracy:",
-                  "value": _tacc,
-                  "inline": true
-                },
-                {
-                  "name": "Throw Power:",
-                  "value": _tpwr,
-                  "inline": true
-                },
-                {
-                  "name": "Awareness:",
-                  "value": _aware,
-                  "inline": true
-                },
-                {
-                  "name": "Break Block:",
-                  "value": _bb,
-                  "inline": true
-                },
-                {
-                  "name": "Tackle:",
-                  "value": _tkl,
-                  "inline": true
-                },
-                {
-                  "name": "Cover:",
-                  "value": _cover,
-                  "inline": true
-                },
-                {
-                  "name": "Hit Power:",
-                  "value": _hpwr,
-                  "inline": true
-                },
-                {
-                  "name": "Kick Accuracy:",
-                  "value": _kacc,
-                  "inline": true
-                },
-                {
-                  "name": "Kick Power:",
-                  "value": _kpwr,
-                  "inline": true
-                },
-                {
-                  "name": "Endurance:",
-                  "value": _end,
-                  "inline": true
-                },
-                {
-                  "name": "\u200b",
-                  "value": "\u200b",
-                  "inline": true
-                },
-                {
-                  "name": "Discipline:",
-                  "value": _dis,
-                  "inline": true
-                }
-              ]
-            };
-            message.channel.send({ embed });
-        }
+          const args = {
+            _color,
+            _logo,
+            _name,
+            _regclass,
+            _team,
+            _pos,
+            _tpe,
+            _dcp,
+            _number,
+            _spd,
+            _tb,
+            _fum,
+            _catch,
+            _blk,
+            _tacc,
+            _kpwr,
+            _kacc,
+            _bb,
+            _tkl,
+            _tpwr,
+            _aware,
+            _agl,
+            _cover,
+            _hpwr,
+            _end,
+            _dis,
+        } 
+        client.commands.get("attributes").execute(message, args);
+      }
+
+
 }else if(message.content.startsWith('s!week')){
         const args1 = message.content.slice(2).split();
         const command1 = args1.shift().toLowerCase();
