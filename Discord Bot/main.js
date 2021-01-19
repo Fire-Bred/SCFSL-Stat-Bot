@@ -318,7 +318,10 @@ client.on('message', message => {
 				}
 				client.commands.get("penaltyStats")
 					.execute(message, args);
-			}
+      }
+      if(_patt + _ratt + _targets + _penalties + _xpa + _fga + _punts + _tackles + _sacks + _ffs + _frs + _pds + _ints == 0  )  {
+        message.channel.send("You have played but have racked up no stats")
+      }
 		}
 	} else if(message.content.startsWith('s!champ')) {
 		message.channel.send("https://tenor.com/zw3L.gif")
@@ -457,7 +460,7 @@ client.on('message', message => {
 				client.commands.get("receivingStats")
 					.execute(message, args);
 			}
-			if(_tackles > 0) {
+			if(_tackles + _sacks + _ffs + _frs + _pds + ints  > 0) {
 				const args = {
 					_regclass,
 					_pos,
@@ -512,7 +515,10 @@ client.on('message', message => {
 				}
 				client.commands.get("penaltyStats")
 					.execute(message, args);
-			}
+      }
+      if(_patt + _ratt + _targets + _penalties + _xpa + _fga + _punts + _tackles + _sacks + _ffs + _frs + _pds + ints == 0  )  {
+        message.channel.send("You have played but have racked up no stats")
+      }
 		}
 
 	} else if(message.content.startsWith('s!attributes')) {
@@ -616,55 +622,18 @@ client.on('message', message => {
 			let _game5 = client.schedule[editedmessage].Game5;
 			let _game6 = client.schedule[editedmessage].Game6;
 			let _week = client.schedule[editedmessage].Week;
-			const embed = {
-				"title": "Matchups:",
-				"description": "\u200b",
-				"color": 13938487,
-				"footer": {
-					"text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-				},
-				"thumbnail": {
-					"url": "https://media.discordapp.net/attachments/479046880391856159/738581773952352386/scfsl.png?width=498&height=498"
-				},
-				"author": {
-					"name": _week,
-					"icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-				},
-				"fields": [
-				{
-					"name": _game1,
-					"value": "\u200b",
-					"inline": true
-				},
-				{
-					"name": _game2,
-					"value": "\u200b",
-					"inline": true
-				},
-				{
-					"name": _game3,
-					"value": "\u200b",
-					"inline": true
-				},
-				{
-					"name": _game4,
-					"value": "\u200b",
-					"inline": true
-				},
-				{
-					"name": _game5,
-					"value": "\u200b",
-					"inline": true
-				},
-				{
-					"name": _game6,
-					"value": "\u200b",
-					"inline": true
-				}]
-			};
-			message.channel.send({
-				embed
-			});
+      
+      const args = {
+				_game1,
+				_game2,
+				_game3,
+				_game4,
+				_game5,
+				_game6,
+				_week,
+			}
+			client.commands.get("weeks")
+				.execute(message, args);
 		}
 
 	} else if(command == 'help') {
