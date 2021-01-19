@@ -229,246 +229,73 @@ client.on('message', message =>{
         }
         client.commands.get("rushingStats").execute(message, args);
         } if(_targets > 0){
-            const embed = {
-                "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-                "description": "TPE Spent: " + _tpe,
-                "color": _color,
-                "footer": {
-                  "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-                },
-                "thumbnail": {
-                  "url": _logo
-                },
-                "author": {
-                  "name": "Major League Receiving Stats",
-                  "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-                },
-                "fields": [
-                  {
-                    "name": "Catches"  ,
-                    "value": _catch,
-                    "inline": true
-                  },
-                  {
-                    "name": "Receiving Yards: " ,
-                    "value": _reyards,
-                    "inline": true
-                  },
-                  {
-                    "name": "Yards Per Catch: " ,
-                    "value": Number(_reyards/_catch).toFixed(2),
-                    "inline": true
-                  },
-                  {
-                    "name": "Touchdowns: ",
-                    "value": _rtd,
-                    "inline": true
-                  },
-                  {
-                    "name": "Drops: " ,
-                    "value": _drops,
-                    "inline": true
-                  },
-                  {
-                    "name": "Drop %: " ,
-                    "value": Number(_drops/(_catch+_drops)*100).toFixed(2)+"%",
-                    "inline": true
-                  },
-                  {
-                    "name": "Targets: ",
-                    "value": _targets,
-                    "inline": true
-                },
-                {
-                  "name": "Long: ",
-                  "value": _relong,
-                  "inline": true
-                },
-                {
-                  "name": "Fumbles: ",
-                  "value": _fumbles,
-                  "inline": true
-                }
-                ]
-              };
-              message.channel.send({ embed });
+          const args = {
+            _regclass,
+            _pos,
+            _name,
+            _team,
+            _tpe,
+            _color,
+            _logo,
+            _targets,
+            _relong,
+            _reyards,
+            _drops,
+            _catch,
+            _rtd,
+            _fumbles
+          }
+          client.commands.get("receivingStats").execute(message, args);
         } if(_tackles+_sacks+_pds+_ints+_frs+_ffs > 0){
-            const embed = {
-                "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-                "description": "TPE Spent: " + _tpe,
-                "color": _color,
-                "footer": {
-                  "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-                },
-                "thumbnail": {
-                  "url": _logo
-                },
-                "author": {
-                  "name": "Major League Defensive Stats",
-                  "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-                },
-                "fields": [
-                  {
-                    "name": "Tackles: "  ,
-                    "value": _tackles,
-                    "inline": true
-                  },
-                  {
-                    "name": "Sacks:" ,
-                    "value": _sacks,
-                    "inline": true
-                  },
-                  {
-                    "name": "Forced Fumbles:" ,
-                    "value": _ffs,
-                    "inline": true
-                  },
-                  {
-                    "name": "Interceptions: ",
-                    "value": _ints,
-                    "inline": true
-                  },
-                  {
-                    "name": "Knockdowns: " ,
-                    "value": _pds,
-                    "inline": true
-                  },
-                  {
-                    "name": "Fumble Recoveries: " ,
-                    "value": _frs,
-                    "inline": true
-                  },
-                  {
-                    "name": "\u200b" ,
-                    "value": "\u200b",
-                    "inline": true
-                  },
-                  {
-                    "name": "Touchdowns: ",
-                    "value": _rtd,
-                    "inline": true
-                },
-                {
-                    "name": "\u200b" ,
-                    "value": "\u200b",
-                    "inline": true
-                  }
-                ]
-              };
-              message.channel.send({ embed });
-        } if(_xpa + _fga > 0){
-            const embed = {
-                "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-                "description": "TPE Spent: " + _tpe,
-                "color": _color,
-                "footer": {
-                  "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-                },
-                "thumbnail": {
-                  "url": _logo
-                },
-                "author": {
-                  "name": "Major League Kicking Stats",
-                  "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-                },
-                "fields": [
-                  {
-                    "name": "XPM:"  ,
-                    "value": _xpm,
-                    "inline": true
-                  },
-                  {
-                    "name": "XPA:" ,
-                    "value": _xpa,
-                    "inline": true
-                  },
-                  {
-                    "name": "XP%:" ,
-                    "value": Number(_xpm/(_xpa)*100).toFixed(2)+"%",
-                    "inline": true
-                  },
-                  {
-                    "name": "FGM:",
-                    "value": _fgm,
-                    "inline": true
-                  },
-                  {
-                    "name": "FGA: " ,
-                    "value": _fga,
-                    "inline": true
-                  },
-                  {
-                    "name": "FG%:" ,
-                    "value": Number(_fgm/(_fga)*100).toFixed(2)+"%",
-                    "inline": true
-                  },
-                  {
-                    "name": "Punts:" ,
-                    "value": _punts,
-                    "inline": true
-                  },
-                  {
-                    "name": "Punt Yards: ",
-                    "value": _puntyards,
-                    "inline": true
-                },
-                {
-                    "name": "Average Yards/Punt: " ,
-                    "value": Number(_puntyards/_punts).toFixed(2),
-                    "inline": true
-                  },
-                  {
-                    "name": "Punt Touchbacks: " ,
-                    "value": _ptbs,
-                    "inline": true
-                  },
-                  {
-                    "name": "\u200b",
-                    "value": "\u200b",
-                    "inline": true
-                  },
-                  {
-                    "name": "Punts in 20: " ,
-                    "value": _pi20,
-                    "inline": true
-                  }
-                ]
-              };
-              message.channel.send({ embed });
+          const args = {
+            _regclass,
+            _pos,
+            _name,
+            _team,
+            _tpe,
+            _color,
+            _logo,
+            _tackles,
+            _sacks,
+            _ints,
+            _ffs,
+            _pds,
+            _frs,
+            _rtd,
+          }
+          client.commands.get("defensiveStats").execute(message, args);
+        } if(_xpa + _fga +_punts > 0){
+          const args = {
+            _regclass,
+            _pos,
+            _name,
+            _team,
+            _tpe,
+            _color,
+            _logo,
+            _fga,
+            _fgm,
+            _xpa,
+            _xpm,
+            _punts,
+            _puntyards,
+            _ptbs,
+            _pi20,
+          }
+          client.commands.get("kickingStats").execute(message, args);
         } if(_penalties > 0){
-            const embed = {
-                "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-                "description": "TPE Spent: " + _tpe,
-                "color": _color,
-                "footer": {
-                  "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-                },
-                "thumbnail": {
-                  "url": _logo
-                },
-                "author": {
-                  "name": "Major League Penalty Stats",
-                  "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-                },
-                "fields": [
-                  {
-                    "name": "Penalties:"  ,
-                    "value": _penalties,
-                    "inline": true
-                  },
-                  {
-                    "name": "Penalty Yards:" ,
-                    "value": _penyards,
-                    "inline": true
-                  },
-                  {
-                    "name": "Average Yards/Penalty: " ,
-                    "value": Number(_penyards/(_penalties)).toFixed(2),
-                    "inline": true
-                  }
-                ]
-              };
-              message.channel.send({ embed });
+          const args = {
+            _regclass,
+            _pos,
+            _name,
+            _team,
+            _tpe,
+            _color,
+            _logo,
+            _penalties,
+            _penyards,
+          }
+          client.commands.get("penaltyStats").execute(message, args);
         }
     }
 } else if(message.content.startsWith('s!champ')){
@@ -545,360 +372,108 @@ client.on('message', message =>{
    if(_name == ""){
         message.channel.send("If you believe you have already done this DM Toasty")
    } if(_patt > 0){
-    const embed = {
-        "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-        "description": "TPE Spent: " + _tpe,
-        "color": _color,
-        "footer": {
-          "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-        },
-        "thumbnail": {
-          "url": _logo
-        },
-        "author": {
-          "name": "Dev League Passing Stats",
-          "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-        },
-        "fields": [
-          {
-            "name": "Pass Completions: "  ,
-            "value": _pcomp,
-            "inline": true
-          },
-          {
-            "name": "Pass Attempts: " ,
-            "value": _patt,
-            "inline": true
-          },
-          {
-            "name": "Completion %: " ,
-            "value": Number(_pcomp/_patt*100).toFixed(2) +"%",
-            "inline": true
-          },
-          {
-            "name": "Passing Yards: ",
-            "value": _pyards,
-            "inline": true
-          },
-          {
-            "name": "Touchdowns: " ,
-            "value": _ptds,
-            "inline": true
-          },
-          {
-            "name": "Interceptions: " ,
-            "value": _pints,
-            "inline": true
-          },
-          {
-            "name": "Passer Rating: ",
-            "value": Number(_prating).toFixed(2),
-            "inline": true
-          },
-          {
-            "name": "\u200b",
-            "value": "\u200b",
-            "inline": true
-          },
-        {
-          "name": "Longest Pass: " ,
-          "value": _plong,
-          "inline": true
-        }
-        ]
-      };
-      message.channel.send({ embed });
-
+    const args = {
+      _regclass,
+      _pos,
+      _name,
+      _team,
+      _tpe,
+      _color,
+      _logo,
+      _pcomp,
+      _patt,
+      completionPercentage: Number((_pcomp / _patt) * 100).toFixed(2) + "%",
+      _pyards,
+      _ptds,
+      _pints,
+      passerRating: Number(_prating).toFixed(2),
+      _plong,
+    };
+    client.commands.get("mpassingStats").execute(message, args);
    } if(_ratt > 0){
-    const embed = {
-        "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-        "description": "TPE Spent: " + _tpe,
-        "color": _color,
-        "footer": {
-          "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-        },
-        "thumbnail": {
-          "url": _logo
-        },
-        "author": {
-          "name": "Dev League Rushing Stats",
-          "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-        },
-        "fields": [
-          {
-            "name": "Rushing Attempts: "  ,
-            "value": _ratt,
-            "inline": true
-          },
-          {
-            "name": "Rushing Yards: " ,
-            "value": _rushyards,
-            "inline": true
-          },
-          {
-            "name": "Yards Per Attempt: " ,
-            "value": Number(_rushyards/_ratt).toFixed(2),
-            "inline": true
-          },
-          {
-            "name": "Long: ",
-            "value": _rushlong,
-            "inline": true
-          },
-          {
-            "name": "Touchdowns: " ,
-            "value": _rtd,
-            "inline": true
-          },
-          {
-            "name": "Fumbles: " ,
-            "value": _fumbles,
-            "inline": true
-        }
-        ]
-      };
-      message.channel.send({ embed });
+    const args = {
+      _regclass,
+      _pos,
+      _name,
+      _team,
+      _tpe,
+      _color,
+      _logo,
+      _ratt,
+      _rushyards,
+      _rushlong,
+      _rtd,
+      _fumbles,
+    }
+    client.commands.get("rushingStats").execute(message, args);
     } if(_targets > 0){
-        const embed = {
-            "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-            "description": "TPE Spent: " + _tpe,
-            "color": _color,
-            "footer": {
-              "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-            },
-            "thumbnail": {
-              "url": _logo
-            },
-            "author": {
-              "name": "Dev League Receiving Stats",
-              "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-            },
-            "fields": [
-              {
-                "name": "Catches"  ,
-                "value": _catch,
-                "inline": true
-              },
-              {
-                "name": "Receiving Yards: " ,
-                "value": _reyards,
-                "inline": true
-              },
-              {
-                "name": "Yards Per Catch: " ,
-                "value": Number(_reyards/_catch).toFixed(2),
-                "inline": true
-              },
-              {
-                "name": "Touchdowns: ",
-                "value": _rtd,
-                "inline": true
-              },
-              {
-                "name": "Drops: " ,
-                "value": _drops,
-                "inline": true
-              },
-              {
-                "name": "Drop %: " ,
-                "value": Number(_drops/(_catch+_drops)*100).toFixed(2)+"%",
-                "inline": true
-              },
-              {
-                "name": "Targets: ",
-                "value": _targets,
-                "inline": true
-            },
-            {
-              "name": "Long: ",
-              "value": _relong,
-              "inline": true
-            },
-            {
-              "name": "Fumbles: ",
-              "value": _fumbles,
-              "inline": true
-            }
-            ]
-          };
-          message.channel.send({ embed });
+      const args = {
+        _regclass,
+        _pos,
+        _name,
+        _team,
+        _tpe,
+        _color,
+        _logo,
+        _targets,
+        _relong,
+        _reyards,
+        _drops,
+        _catch,
+        _rtd,
+        _fumbles
+      }
+      client.commands.get("receivingStats").execute(message, args);
     } if(_tackles > 0){
-        const embed = {
-            "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-            "description": "TPE Spent: " + _tpe,
-            "color": _color,
-            "footer": {
-              "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-            },
-            "thumbnail": {
-              "url": _logo
-            },
-            "author": {
-              "name": "Dev League Defensive Stats",
-              "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-            },
-            "fields": [
-              {
-                "name": "Tackles: "  ,
-                "value": _tackles,
-                "inline": true
-              },
-              {
-                "name": "Sacks:" ,
-                "value": _sacks,
-                "inline": true
-              },
-              {
-                "name": "Forced Fumbles:" ,
-                "value": _ffs,
-                "inline": true
-              },
-              {
-                "name": "Interceptions: ",
-                "value": _ints,
-                "inline": true
-              },
-              {
-                "name": "Knockdowns: " ,
-                "value": _pds,
-                "inline": true
-              },
-              {
-                "name": "Fumble Recoveries: " ,
-                "value": _frs,
-                "inline": true
-              },
-              {
-                "name": "\u200b" ,
-                "value": "\u200b",
-                "inline": true
-              },
-              {
-                "name": "Touchdowns: ",
-                "value": _rtd,
-                "inline": true
-            },
-            {
-                "name": "\u200b" ,
-                "value": "\u200b",
-                "inline": true
-              }
-            ]
-          };
-          message.channel.send({ embed });
-    } if(_xpa + _fga > 0){
-        const embed = {
-            "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-            "description": "TPE Spent: " + _tpe,
-            "color": _color,
-            "footer": {
-              "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-            },
-            "thumbnail": {
-              "url": _logo
-            },
-            "author": {
-              "name": "Dev League Kicking Stats",
-              "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-            },
-            "fields": [
-              {
-                "name": "XPM:"  ,
-                "value": _xpm,
-                "inline": true
-              },
-              {
-                "name": "XPA:" ,
-                "value": _xpa,
-                "inline": true
-              },
-              {
-                "name": "XP%:" ,
-                "value": Number(_xpm/(_xpa)*100).toFixed(2)+"%",
-                "inline": true
-              },
-              {
-                "name": "FGM:",
-                "value": _fgm,
-                "inline": true
-              },
-              {
-                "name": "FGA: " ,
-                "value": _fga,
-                "inline": true
-              },
-              {
-                "name": "FG%:" ,
-                "value": Number(_fgm/(_fga)*100).toFixed(2)+"%",
-                "inline": true
-              },
-              {
-                "name": "Punts:" ,
-                "value": _punts,
-                "inline": true
-              },
-              {
-                "name": "Punt Yards: ",
-                "value": _puntyards,
-                "inline": true
-            },
-            {
-                "name": "Average Yards/Punt: " ,
-                "value": Number(_puntyards/_punts).toFixed(2),
-                "inline": true
-              },
-              {
-                "name": "Punt Touchbacks: " ,
-                "value": _ptbs,
-                "inline": true
-              },
-              {
-                "name": "\u200b",
-                "value": "\u200b",
-                "inline": true
-              },
-              {
-                "name": "Punts in 20: " ,
-                "value": _pi20,
-                "inline": true
-              }
-            ]
-          };
-          message.channel.send({ embed });
+      const args = {
+        _regclass,
+        _pos,
+        _name,
+        _team,
+        _tpe,
+        _color,
+        _logo,
+        _tackles,
+        _sacks,
+        _ints,
+        _ffs,
+        _pds,
+        _frs,
+        _rtd,
+      }
+      client.commands.get("defensiveStats").execute(message, args);
+    } if(_xpa + _fga +_punts > 0){
+      const args = {
+        _regclass,
+        _pos,
+        _name,
+        _team,
+        _tpe,
+        _color,
+        _logo,
+        _fga,
+        _fgm,
+        _xpa,
+        _xpm,
+        _punts,
+        _puntyards,
+        _ptbs,
+        _pi20,
+      }
+      client.commands.get("kickingStats").execute(message, args);
     } if(_penalties > 0){
-        const embed = {
-            "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-            "description": "TPE Spent: " + _tpe,
-            "color": _color,
-            "footer": {
-              "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-            },
-            "thumbnail": {
-              "url": _logo
-            },
-            "author": {
-              "name": "Dev League Penalty Stats",
-              "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-            },
-            "fields": [
-              {
-                "name": "Penalties:"  ,
-                "value": _penalties,
-                "inline": true
-              },
-              {
-                "name": "Penalty Yards:" ,
-                "value": _penyards,
-                "inline": true
-              },
-              {
-                "name": "Average Yards/Penalty: " ,
-                "value": Number(_penyards/(_penalties)).toFixed(2),
-                "inline": true
-              }
-            ]
-          };
-          message.channel.send({ embed });
+      const args = {
+        _regclass,
+        _pos,
+        _name,
+        _team,
+        _tpe,
+        _color,
+        _logo,
+        _penalties,
+        _penyards,
+      }
+      client.commands.get("penaltyStats").execute(message, args);
     }
 }
 
