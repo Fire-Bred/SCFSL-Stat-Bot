@@ -188,99 +188,30 @@ client.on('message', message =>{
        }
 
        if(_patt > 0){
-        const embed = {
-            "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-            "description": "TPE Spent: " + _tpe,
-            "color": _color,
-            "footer": {
-              "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-            },
-            "thumbnail": {
-              "url": _logo
-            },
-            "author": {
-              "name": "Major League Passing Stats",
-              "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-            },
-            "fields": [
-              {
-                "name": "Pass Completions: "  ,
-                "value": _pcomp,
-                "inline": true
-              },
-              {
-                "name": "Pass Attempts: " ,
-                "value": _patt,
-                "inline": true
-              },
-              {
-                "name": "Completion %: " ,
-                "value": Number(_pcomp/_patt*100).toFixed(2) +"%",
-                "inline": true
-              },
-              {
-                "name": "Passing Yards: ",
-                "value": _pyards,
-                "inline": true
-              },
-              {
-                "name": "Touchdowns: " ,
-                "value": _ptds,
-                "inline": true
-              },
-              {
-                "name": "Interceptions: " ,
-                "value": _pints,
-                "inline": true
-              },
-              {
-                "name": "Passer Rating: ",
-                "value": Number(_prating).toFixed(2),
-                "inline": true
-              },
-              {
-                "name": "ANY/A:",
-                "value": Number(_anya).toFixed(3),
-                "inline": true
-            },
-            {
-              "name": "Longest Pass: " ,
-              "value": _plong,
-              "inline": true
-            },
-            {
-                "name": "Sacks: ",
-                "value": _qbsacks,
-                "inline": true
-            },
-            {
-              "name": "\u200b",
-              "value": "\u200b",
-              "inline": true
-            },
-            {
-                "name": "Drops: ",
-                "value": _qbdrops,
-                "inline": true
-            },
-            {
-                "name": "Sack %:",
-                "value": Number((_qbsacks/(_qbsacks+_patt))*100).toFixed(2)+"%",
-                "inline": true
-            },
-            {
-              "name": "\u200b",
-              "value": "\u200b",
-              "inline": true
-            },
-            {
-                "name": "Drop %:",
-                "value": Number(_qbdrops/_patt*100).toFixed(2) + '%',
-                'inline': true
-            }
-            ]
-          };
-          message.channel.send({ embed });
+        const args = {
+          _regclass,
+          _pos,
+          _name,
+          _team,
+          _tpe,
+          _color,
+          _logo,
+          _pcomp,
+          _patt,
+          completionPercentage: Number((_pcomp / _patt) * 100).toFixed(2) + "%",
+          _pyards,
+          _ptds,
+          _pints,
+          passerRating: Number(_prating).toFixed(2),
+          anya: Number(_anya).toFixed(3),
+          _plong,
+          _qbsacks,
+          _qbdrops,
+          sackPercentage:
+            Number((_qbsacks / (_qbsacks + _patt)) * 100).toFixed(2) + "%",
+          dropPercentage: Number((_qbdrops / _patt) * 100).toFixed(2) + "%",
+        };
+        client.commands.get("passingStats").execute(message, args);
        } if(_ratt > 0){
         const embed = {
             "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
