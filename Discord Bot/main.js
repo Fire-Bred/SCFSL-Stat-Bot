@@ -213,55 +213,21 @@ client.on('message', message =>{
         };
         client.commands.get("passingStats").execute(message, args);
        } if(_ratt > 0){
-        const embed = {
-            "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
-            "description": "TPE Spent: " + _tpe,
-            "color": _color,
-            "footer": {
-              "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
-            },
-            "thumbnail": {
-              "url": _logo
-            },
-            "author": {
-              "name": "Major League Rushing Stats",
-              "icon_url": "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
-            },
-            "fields": [
-              {
-                "name": "Rushing Attempts: "  ,
-                "value": _ratt,
-                "inline": true
-              },
-              {
-                "name": "Rushing Yards: " ,
-                "value": _rushyards,
-                "inline": true
-              },
-              {
-                "name": "Yards Per Attempt: " ,
-                "value": Number(_rushyards/_ratt).toFixed(2),
-                "inline": true
-              },
-              {
-                "name": "Long: ",
-                "value": _rushlong,
-                "inline": true
-              },
-              {
-                "name": "Touchdowns: " ,
-                "value": _rtd,
-                "inline": true
-              },
-              {
-                "name": "Fumbles: " ,
-                "value": _fumbles,
-                "inline": true
-            }
-            ]
-          };
-          message.channel.send({ embed });
-       
+        const args = {
+          _regclass,
+          _pos,
+          _name,
+          _team,
+          _tpe,
+          _color,
+          _logo,
+          _ratt,
+          _rushyards,
+          _rushlong,
+          _rtd,
+          _fumbles,
+        }
+        client.commands.get("rushingStats").execute(message, args);
         } if(_targets > 0){
             const embed = {
                 "title": _regclass +" "+ _pos + " - " + _name + " - " + _team,
