@@ -3,3 +3,4 @@ Discord Bot/.env
 Discord Bot/sheets/quickstart/Token.json
 Discord Bot/sheets/quickstart/credentials.json
 Discord Bot/stats/players.json
+Discord Bot/package.json
