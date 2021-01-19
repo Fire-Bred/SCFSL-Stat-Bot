@@ -1,6 +1,6 @@
 module.exports = {
     name: "attributes",
-    description: "This command gets a player's stats for you",
+    description: "This command gets a player's attributes for you",
     execute(message, args) {
 const embed = {
     "title": args._regclass +" "+ args._pos + " - " + "#" + args._number + " - " + args._name + " - " + args._team,
