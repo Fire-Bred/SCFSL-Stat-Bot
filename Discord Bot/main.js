@@ -460,7 +460,7 @@ client.on('message', message => {
 				client.commands.get("receivingStats")
 					.execute(message, args);
 			}
-			if(_tackles + _sacks + _ffs + _frs + _pds + ints  > 0) {
+			if(_tackles + _sacks + _ffs + _frs + _pds + _ints  > 0) {
 				const args = {
 					_regclass,
 					_pos,
@@ -516,7 +516,7 @@ client.on('message', message => {
 				client.commands.get("penaltyStats")
 					.execute(message, args);
       }
-      if(_patt + _ratt + _targets + _penalties + _xpa + _fga + _punts + _tackles + _sacks + _ffs + _frs + _pds + ints == 0  )  {
+      if(_patt + _ratt + _targets + _penalties + _xpa + _fga + _punts + _tackles + _sacks + _ffs + _frs + _pds + _ints == 0  )  {
         message.channel.send("You have played but have racked up no stats")
       }
 		}
