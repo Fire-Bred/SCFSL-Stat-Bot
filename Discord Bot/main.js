@@ -55,143 +55,63 @@ client.once('ready', () => {
 client.on('message', message => {
 
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
-
+	var currentdate = new Date(); 
+	var datetime = "Date Time: " + currentdate.getDate() + "/"
+		+ (currentdate.getMonth()+1)  + "/" 
+		+ currentdate.getFullYear() + " @ "  
+		+ currentdate.getHours() + ":"  
+		+ currentdate.getMinutes() + ":" 
+		+ currentdate.getSeconds();
+	console.log(message.author.username + " " + datetime + " :" + message.content)
 	const args = message.content.slice(prefix.length)
 		.split(/ +/);
 	const command = args.shift()
 		.toLowerCase();
 
 	if(command === 'ping') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('ping')
 			.execute(message, args);
 
 	} else if(command == 'twitch') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
+		
 		client.commands.get('twitch')
 			.execute(message, args);
 
 	} else if(command == 'youtube') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('youtube')
 			.execute(message, args);
 
 	} else if(command == 'schedule') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('schedule')
 			.execute(message, args);
 
 	} else if(command == 'ac') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('ac')
 			.execute(message, args);
 
 	} else if(command == 'create') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('create')
 			.execute(message, args);
 
 	} else if(command == 'rulebook') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('rulebook')
 			.execute(message, args);
 
 	} else if(command == 'bank') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('bank')
 			.execute(message, args);
 
 	} else if(command == 'tpescale') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('tpescale')
 			.execute(message, args);
 
 	} else if(command == 'allweather') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('weather')
 			.execute(message, args);
 		client.commands.get('wind')
 			.execute(message, args);
 
 	} else if(message.content.startsWith('s!set player')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		editedmessage = message.content.slice(13);
 		client.playernames[message.author.id] = {
 			player: editedmessage
@@ -202,26 +122,10 @@ client.on('message', message => {
 		});
 
 	} else if(message.content.startsWith('s!check player')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		let _message = client.playernames[message.author.id].player;
 		message.channel.send('Player Name is: ' + _message);
 
 	} else if(message.content.startsWith('s!stats')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		const args1 = message.content.slice(8)
 			.split();
 		const command1 = args1.shift()
@@ -428,34 +332,10 @@ client.on('message', message => {
       }
 		}
 	} else if(message.content.startsWith('s!champ')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		message.channel.send("https://tenor.com/zw3L.gif")
 	} else if(message.content.startsWith('s!mchamp')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		message.channel.send("https://tenor.com/xrpO.gif")
 	} else if(message.content.startsWith('s!mstats')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		const args1 = message.content.slice(9)
 			.split();
 		const command1 = args1.shift()
@@ -650,14 +530,6 @@ client.on('message', message => {
 		}
 
 	} else if(message.content.startsWith('s!attributes')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		const args1 = message.content.slice(13)
 			.split();
 		const command1 = args1.shift()
@@ -743,14 +615,6 @@ client.on('message', message => {
 		}
 
 	} else if(message.content.startsWith('s!week')) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		const args1 = message.content.slice(2)
 			.split();
 		const command1 = args1.shift()
@@ -781,36 +645,12 @@ client.on('message', message => {
 		}
 
 	} else if(command == 'help') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get("help")
 			.execute(message, args);
 	} else if(command == 'invitebot') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		client.commands.get('invitebot')
 			.execute(message, args)
 	} else if(command == 'kill') {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		let authora = message.author.id
 		if(authora == '419214607970992128') {
 			message.channel.send('Father why would you do this to me')
@@ -820,14 +660,6 @@ client.on('message', message => {
 			message.channel.send('You are not my real father! You can not tell me what to do!');
 		}
 	} else if(message.content.startsWith("s!weather week")) {
-		var currentdate = new Date(); 
-		var datetime = "Date Time: " + currentdate.getDate() + "/"
-			+ (currentdate.getMonth()+1)  + "/" 
-			+ currentdate.getFullYear() + " @ "  
-			+ currentdate.getHours() + ":"  
-			+ currentdate.getMinutes() + ":" 
-			+ currentdate.getSeconds();
-		console.log(message.author.username + " " + datetime + " :" + message.content)
 		const args1 = message.content.slice(10)
 			.split();
 		const command1 = args1.shift()
