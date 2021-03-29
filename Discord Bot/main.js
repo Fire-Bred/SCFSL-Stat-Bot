@@ -31,6 +31,11 @@ client.standings = require("./stats/standings.json")
 
 client.schedule = require("./stats/schedule.json")
 
+const currentdate = new Date(); 
+
+const updated =  (currentdate.getMonth()+1)  + "/" + currentdate.getDate() + "/" +   + currentdate.getFullYear() + " @ "   + currentdate.getHours() + ":"  + currentdate.getMinutes() + ":" + currentdate.getSeconds();;
+
+
 const commandFiles = fs.readdirSync('./commands/')
 	.filter(file => file.endsWith('.js'));
 for(const file of commandFiles) {
@@ -56,13 +61,13 @@ client.on('message', message => {
 
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 	var currentdate = new Date(); 
-	var datetime = "Date Time: " + currentdate.getDate() + "/"
-		+ (currentdate.getMonth()+1)  + "/" 
+	var datetime = " - " + (currentdate.getMonth()+1)  + "/" 
+		+ currentdate.getDate() + "/"
 		+ currentdate.getFullYear() + " @ "  
 		+ currentdate.getHours() + ":"  
 		+ currentdate.getMinutes() + ":" 
 		+ currentdate.getSeconds();
-	console.log(message.author.username + " " + datetime + " :" + message.content)
+	console.log(message.author.username + " in " + message.guild.name + " in " + message.channel.name + " " + datetime + " - " + message.content)
 	const args = message.content.slice(prefix.length)
 		.split(/ +/);
 	const command = args.shift()
@@ -690,6 +695,8 @@ client.on('message', message => {
 
 		}
 
+	} else if(command === "updated"){
+		message.channel.send("The bot was last updated " + updated +" CST")
 	}
 
 });
