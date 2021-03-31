@@ -396,11 +396,14 @@ client.on('message', message => {
 			let _pi20 = client.mstats[editedmessage].PuntsInside20;
 			let _ptbs = client.mstats[editedmessage].PuntTouchbacks;
 			let _puntyards = client.mstats[editedmessage].PuntYards;
+			let _qbsacks = client.mstats[editedmessage].QBSacks;
+			let _qbdrops = client.mstats[editedmessage].QBDrops;
 			let _A = ((_pcomp / _patt) - 0.3) * 5
 			let _B = ((_pyards / _patt) - 3) * 0.25
 			let _C = (_ptds / _patt) * 20
 			let _D = 2.375 - ((_pints / _patt) * 25)
 			let _prating = ((_A + _B + _C + _D) / 6) * 100
+			let _anya = ((_pyards + (_ptds * 20) - (_pints * 45) - (_qbsacks * 5)) / (_patt + _qbsacks))
 			const _team1 = _team.toLowerCase()
 			if(client.teamcolors[_team1] == undefined) {
 				var _color = 13938487
@@ -414,25 +417,33 @@ client.on('message', message => {
 			}
 			if(_patt > 0) {
 				const args = {
-					_regclass,
-					_pos,
-					_name,
-					_team,
-					_tpe,
-					_color,
-					_logo,
-					_pcomp,
-					_patt,
-					completionPercentage: Number((_pcomp / _patt) * 100)
-						.toFixed(2) + "%",
-					_pyards,
-					_ptds,
-					_pints,
-					passerRating: Number(_prating)
-						.toFixed(2),
-					_plong,
-				};
-				client.commands.get("mpassingStats")
+						_regclass,
+						_pos,
+						_name,
+						_team,
+						_tpe,
+						_color,
+						_logo,
+						_pcomp,
+						_patt,
+						completionPercentage: Number((_pcomp / _patt) * 100)
+							.toFixed(2) + "%",
+						_pyards,
+						_ptds,
+						_pints,
+						passerRating: Number(_prating)
+							.toFixed(2),
+						anya: Number(_anya)
+							.toFixed(3),
+						_plong,
+						_qbsacks,
+						_qbdrops,
+						sackPercentage: Number((_qbsacks / (_qbsacks + _patt)) * 100)
+							.toFixed(2) + "%",
+						dropPercentage: Number((_qbdrops / _patt) * 100)
+							.toFixed(2) + "%",
+					};
+				client.commands.get("passingStats")
 					.execute(message, args);
 			}
 			if(_ratt > 0) {
