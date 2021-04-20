@@ -33,6 +33,14 @@ client.schedule = require("./stats/schedule.json")
 
 const currentdate = new Date(); 
 
+client.sk1 = require("./stats/skin1.json")
+client.sk2 = require("./stats/skin2.json")
+client.sk3 = require("./stats/skin3.json")
+client.sk4 = require("./stats/skin4.json")
+client.sk5 = require("./stats/skin5.json")
+client.sk6 = require("./stats/skin6.json")
+
+
 const updated =  (currentdate.getMonth()+1)  + "/" + currentdate.getDate() + "/" +   + currentdate.getFullYear() + " @ "   + currentdate.getHours() + ":"  + currentdate.getMinutes() + ":" + currentdate.getSeconds();;
 
 
@@ -195,16 +203,30 @@ client.on('message', message => {
 			let _D = 2.375 - ((_pints / _patt) * 25)
 			let _prating = ((_A + _B + _C + _D) / 6) * 100
 			let _anya = ((_pyards + (_ptds * 20) - (_pints * 45) - (_qbsacks * 5)) / (_patt + _qbsacks))
+			let _tone = client.stats[editedmessage].SkinTone;
+			let _portrait = client.stats[editedmessage].Portrait;
 			const _team1 = _team.toLowerCase()
 			if(client.teamcolors[_team1] == undefined) {
 				var _color = 13938487
-				var _logo = "https://cdn.discordapp.com/attachments/479046880391856159/738581773952352386/scfsl.png"
 			} else {
 				var _color = client.teamcolors[_team1].Color;
-				var _logo = client.teamcolors[_team1].Logo;
 			}
+			if(_tone == '1'){
+				var _pfp = client.sk1[_portrait].URL
+			} else if(_tone == '2'){
+				var _pfp = client.sk2[_portrait].URL
+			} else if(_tone == '3'){
+				var _pfp = client.sk3[_portrait].URL
+			} else if(_tone == '4'){
+				var _pfp = client.sk4[_portrait].URL
+			} else if(_tone == '5'){
+				var _pfp = client.sk5[_portrait].URL
+			} else if(_tone == '6'){
+				var _pfp = client.sk6[_portrait].URL
+			} else var _pfp = "https://media.discordapp.net/attachments/787018796203376660/819740035392995378/scfsl.png"
 			if(_name == "") {
 				message.channel.send("If you believe you have already done this DM Toasty")
+				stop
 			}
 
 			if(_patt > 0) {
@@ -230,6 +252,7 @@ client.on('message', message => {
 					_plong,
 					_qbsacks,
 					_qbdrops,
+					_pfp,
 					sackPercentage: Number((_qbsacks / (_qbsacks + _patt)) * 100)
 						.toFixed(2) + "%",
 					dropPercentage: Number((_qbdrops / _patt) * 100)
@@ -252,6 +275,7 @@ client.on('message', message => {
 					_rushlong,
 					_rtd,
 					_fumbles,
+					_pfp,
 				}
 				client.commands.get("rushingStats")
 					.execute(message, args);
@@ -271,7 +295,8 @@ client.on('message', message => {
 					_drops,
 					_catch,
 					_rtd,
-					_fumbles
+					_fumbles,
+					_pfp,
 				}
 				client.commands.get("receivingStats")
 					.execute(message, args);
@@ -292,6 +317,7 @@ client.on('message', message => {
 					_pds,
 					_frs,
 					_rtd,
+					_pfp,
 				}
 				client.commands.get("defensiveStats")
 					.execute(message, args);
@@ -313,6 +339,7 @@ client.on('message', message => {
 					_puntyards,
 					_ptbs,
 					_pi20,
+					_pfp,
 				}
 				client.commands.get("kickingStats")
 					.execute(message, args);
@@ -328,6 +355,7 @@ client.on('message', message => {
 					_logo,
 					_penalties,
 					_penyards,
+					_pfp,
 				}
 				client.commands.get("penaltyStats")
 					.execute(message, args);

@@ -10,7 +10,7 @@ const embed = {
       "text": "This bot was created by Toasty using Javascript. If you are interested in a bot for your server DM Toasty#4562"
     },
     "thumbnail": {
-      "url": args._logo
+      "url": args._pfp
     },
     "author": {
       "name": "Major League Kicking Stats",
